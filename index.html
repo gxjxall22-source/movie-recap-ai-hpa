@@ -1,33 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="my">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Recap AI HP</title>
+
+  <title>Movie Recap AI</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: white;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .box {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #60a5fa;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 250px;
+      box-sizing: border-box;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #374151;
+      background: #1f2937;
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 15px;
+      border: 0;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 20px;
+      background: #1f2937;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      line-height: 1.8;
+      min-height: 100px;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>🎬 Movie Recap AI HP</h1>
 
-  <p>Movie Recap Script Generator</p>
+<div class="box">
 
-  <textarea id="story" rows="10" cols="30"
-    placeholder="Movie ဇာတ်လမ်းကို ဒီမှာထည့်ပါ..."></textarea>
+  <h1>🎬 Movie Recap AI</h1>
 
-  <br><br>
+  <p>Movie ဇာတ်လမ်းကို ထည့်ပါ</p>
 
-  <button onclick="generate()">Generate Recap</button>
+  <textarea
+    id="story"
+    placeholder="Movie ဇာတ်လမ်းကို ဒီနေရာမှာ ရေးပါ..."
+  ></textarea>
 
-  <h2>Result</h2>
-  <div id="result"></div>
+  <button onclick="generate()">
+    ✨ Generate Movie Recap
+  </button>
 
-  <script>
-    function generate() {
-      const text = document.getElementById("story").value;
+  <h2>📖 Result</h2>
 
-      document.getElementById("result").innerText =
-        "Movie Recap:\n\n" + text;
-    }
-  </script>
+  <div id="result">
+    Movie Recap ဒီနေရာမှာ ပေါ်လာပါမယ်။
+  </div>
+
+</div>
+
+<script>
+function generate() {
+
+  const story = document.getElementById("story").value.trim();
+
+  if (!story) {
+    document.getElementById("result").innerText =
+      "⚠️ Movie ဇာတ်လမ်း အရင်ထည့်ပါ။";
+    return;
+  }
+
+  document.getElementById("result").innerText =
+    "🎬 Movie Recap\n\n" + story;
+}
+</script>
+
 </body>
 </html>
