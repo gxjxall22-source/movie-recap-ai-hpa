@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Recap AI HP</title>
+</head>
+
+<body>
+  <h1>🎬 Movie Recap AI HP</h1>
+
+  <p>Movie Recap Script Generator</p>
+
+  <textarea id="story" rows="10" cols="30"
+    placeholder="Movie ဇာတ်လမ်းကို ဒီမှာထည့်ပါ..."></textarea>
+
+  <br><br>
+
+  <button onclick="generate()">Generate Recap</button>
+
+  <h2>Result</h2>
+  <div id="result"></div>
+
+  <script>
+    function generate() {
+      const text = document.getElementById("story").value;
+
+      document.getElementById("result").innerText =
+        "Movie Recap:\n\n" + text;
+    }
+  </script>
+</body>
+</html>
